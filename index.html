@@ -20,13 +20,107 @@
             justify-content: center;
         }
 
-        .logo {
+        .glitch-wrapper {
+            position: relative;
             width: 200px;
             height: 200px;
+        }
+
+        .glitch-wrapper img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .glitch-wrapper::before,
+        .glitch-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("gy-logo.png") center/contain no-repeat;
+            opacity: 0.8;
+        }
+
+        .glitch-wrapper::before {
+            animation: glitch-1 4s infinite linear;
+        }
+
+        .glitch-wrapper::after {
+            animation: glitch-2 4s infinite linear;
+        }
+
+        @keyframes glitch-1 {
+            0%, 90% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(0);
+                opacity: 0;
+            }
+            91% {
+                clip-path: inset(20% 0 40% 0);
+                transform: translate(-4px, 2px);
+                opacity: 0.8;
+                filter: hue-rotate(90deg) saturate(2);
+            }
+            92% {
+                clip-path: inset(60% 0 10% 0);
+                transform: translate(3px, -1px);
+                opacity: 0.6;
+            }
+            93% {
+                clip-path: inset(10% 0 70% 0);
+                transform: translate(-2px, 1px);
+                opacity: 0.8;
+                filter: hue-rotate(180deg);
+            }
+            94% {
+                clip-path: inset(40% 0 30% 0);
+                transform: translate(5px, -2px);
+                opacity: 0.7;
+            }
+            95%, 100% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes glitch-2 {
+            0%, 92% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(0);
+                opacity: 0;
+            }
+            93% {
+                clip-path: inset(50% 0 20% 0);
+                transform: translate(4px, 1px);
+                opacity: 0.7;
+                filter: hue-rotate(-90deg) brightness(1.5);
+            }
+            94% {
+                clip-path: inset(15% 0 55% 0);
+                transform: translate(-3px, -2px);
+                opacity: 0.8;
+            }
+            95% {
+                clip-path: inset(70% 0 5% 0);
+                transform: translate(2px, 3px);
+                opacity: 0.6;
+                filter: hue-rotate(270deg);
+            }
+            96%, 100% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(0);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <img src="gy-logo.png" alt="Glitchyard" class="logo">
+    <div class="glitch-wrapper">
+        <img src="gy-logo.png" alt="Glitchyard" class="logo">
+    </div>
 </body>
 </html>
