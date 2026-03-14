@@ -74,6 +74,7 @@
     uniform float u_time;
     uniform float u_glitchIntensity;
     uniform float u_seed;
+    uniform float u_opacity;
 
     float rand(vec2 co) {
       return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
@@ -126,6 +127,7 @@
       float flashLine = step(0.95, rand(vec2(sliceY + 0.3, u_seed * 3.0))) * intensity;
       color.rgb += vec3(flashLine * 0.3);
 
+      color.a *= u_opacity;
       gl_FragColor = color;
     }
   `;
@@ -175,11 +177,17 @@
   const uTime = gl.getUniformLocation(program, 'u_time');
   const uGlitch = gl.getUniformLocation(program, 'u_glitchIntensity');
   const uSeed = gl.getUniformLocation(program, 'u_seed');
+  const uOpacity = gl.getUniformLocation(program, 'u_opacity');
 
   const texture = gl.createTexture();
   gl.bindTexture(gl.TEXTURE_2D, texture);
   gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE,
     new Uint8Array([255, 255, 255, 255]));
+
+  const FADE_DURATION = 1500;
+  let fadeStart = -1;
+  let logoOpacity = 0;
+  let textureLoaded = false;
 
   function loadTexture(src) {
     const img = new Image();
@@ -191,6 +199,7 @@
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      textureLoaded = true;
     };
     img.src = src;
   }
@@ -227,6 +236,14 @@
   function render(now) {
     requestAnimationFrame(render);
 
+    // Fade in after texture loads
+    if (textureLoaded && fadeStart < 0) {
+      fadeStart = now;
+    }
+    if (fadeStart >= 0) {
+      logoOpacity = Math.min((now - fadeStart) / FADE_DURATION, 1.0);
+    }
+
     if (!isGlitching && now >= nextGlitchTime) {
       startGlitch(now);
     }
@@ -253,6 +270,7 @@
     gl.uniform1f(uTime, now * 0.001);
     gl.uniform1f(uGlitch, glitchIntensity);
     gl.uniform1f(uSeed, currentSeed);
+    gl.uniform1f(uOpacity, logoOpacity);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
   }
 
