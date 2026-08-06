@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "files": {
+  "da": {
+   "file": "v1/da_words.txt.gz",
+   "rawBytes": 7621336,
+   "gzBytes": 1607326,
+   "sha256": "34fbaa3fd5c5ddd9506275f614b4a03294be933091f2f9ebe44065380ce11055"
+  },
+  "de": {
+   "file": "v1/de_words.txt.gz",
+   "rawBytes": 8615437,
+   "gzBytes": 1818594,
+   "sha256": "c05bb4409ceaad1e67c1f49766b815d13954993ff9a0b25a0bddecc4ef140e6f"
+  },
+  "en-uk": {
+   "file": "v1/en-uk_words.txt.gz",
+   "rawBytes": 2369431,
+   "gzBytes": 635241,
+   "sha256": "d5c2e110078717f592a0a09e4e51f6ab1fd9df22ca910b41deb4a1150d89c48c"
+  },
+  "es": {
+   "file": "v1/es_words.txt.gz",
+   "rawBytes": 9516475,
+   "gzBytes": 1889685,
+   "sha256": "8d499b2778ac843c11e5096c4e1a427927c8129da35e9b451300142e8f81893b"
+  },
+  "fr": {
+   "file": "v1/fr_words.txt.gz",
+   "rawBytes": 4896565,
+   "gzBytes": 1047602,
+   "sha256": "dea739be6e43cebd40cffea6640de78d95972765f36cedd118f53ca91c8c1f8f"
+  },
+  "it": {
+   "file": "v1/it_words.txt.gz",
+   "rawBytes": 32227847,
+   "gzBytes": 5795218,
+   "sha256": "d0ef0ec5ff204f96eec696939c3f60d60647f3b2a0167d58e7a48f1da837181b"
+  },
+  "nl": {
+   "file": "v1/nl_words.txt.gz",
+   "rawBytes": 5645590,
+   "gzBytes": 1452618,
+   "sha256": "c7d21dccfab6b841f586d91413095cc19256acbd69fef5044b59fb48927eb0e3"
+  },
+  "no": {
+   "file": "v1/no_words.txt.gz",
+   "rawBytes": 8454667,
+   "gzBytes": 1778544,
+   "sha256": "ac3fcec4b365233caa7a2a6ea940a68c1c904f25c7f0e915dc8d6444e498c420"
+  },
+  "sv": {
+   "file": "v1/sv_words.txt.gz",
+   "rawBytes": 8683744,
+   "gzBytes": 1737511,
+   "sha256": "4d4409e2c91a56cef937ad5c6f2da5f1590f7561f6f5a33959679129795aa5e5"
+  }
+ }
+}
