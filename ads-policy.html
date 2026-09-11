@@ -91,17 +91,34 @@
   </p>
 
   <div class="highlight">
-    <strong>Summary:</strong> Letter Legends shows <strong>opt-in rewarded video ads only</strong>. We do not show interstitial ads, we do not show banner ads, and no ad ever interrupts a match. You only ever see an ad because you tapped a button offering you something in return. You can turn off personalized ads at any time in Settings &rarr; Ads Policy.
+    <strong>Summary:</strong> Letter Legends shows two kinds of ads: <strong>rewarded video</strong> you choose to watch for an in-game reward, and <strong>interstitials</strong> — a full-screen ad that appears at one fixed point, after the first round of roughly every third single-player game. We do not show banner ads, and no ad appears while you are mid-word. You can turn off personalized ads at any time in Settings &rarr; Ads Policy.
   </div>
 
-  <h2>1. The only ad you will see</h2>
-  <p>Letter Legends is free to play, and advertising is one of the ways that stays sustainable. We have deliberately limited it to a single format:</p>
+  <h2>1. The ads you will see</h2>
+  <p>Letter Legends is free to play, and advertising is part of how that stays sustainable. There are exactly two formats:</p>
   <ul>
-    <li><strong>Rewarded video</strong> — a short video you choose to watch in exchange for something specific: an extra wheel spin, a reward top-up, or a similar in-game bonus. The reward is always stated on the button before you tap it.</li>
+    <li><strong>Rewarded video</strong> — a short video you choose to watch in exchange for something specific: an extra wheel spin, a reward top-up, or a similar in-game bonus. The reward is always stated on the button before you tap it. These are entirely opt-in; declining never costs you progress, currency, or access to anything you already have.</li>
+    <li><strong>Interstitial</strong> — a full-screen ad you do not opt into. It appears at a single, fixed moment: after the first round of a single-player game, once the round's tiles have landed and before the next round begins. Close it and play continues exactly where you left off.</li>
   </ul>
-  <p>Every rewarded ad is opt-in. Nothing in the game requires you to watch one, and declining never costs you progress, currency, or access to a feature you already have.</p>
 
-  <h2>2. What we do not do</h2>
+  <h2>2. How often interstitials appear</h2>
+  <p>The interstitial has one placement and a deliberate frequency cap:</p>
+  <ul>
+    <li><strong>One placement only</strong> — after round 1. Never mid-round, never at the moment you finish a game, never on launch.</li>
+    <li><strong>Roughly every third game</strong> — the counter is per single-player game, so two out of three games have no interstitial at all.</li>
+    <li><strong>At most once per game</strong> — once the placement is used in a game, it will not fire again in that same game.</li>
+  </ul>
+  <p>Interstitials never appear in the tutorial, in the practice round, or on your turn in an asynchronous Battle against another player.</p>
+
+  <h3>When you will not see them at all</h3>
+  <ul>
+    <li>While you hold an active premium pass, if one is available to you</li>
+    <li>During a grace period after a purchase</li>
+    <li>As a new player, during the early-game grace period</li>
+  </ul>
+  <p>These frequency settings are configured server-side, which means we can loosen them without shipping an app update. We will not tighten them beyond what this page describes without updating this page first.</p>
+
+  <h2>3. What we do not do</h2>
   <table>
     <tr>
       <th>Ad format</th>
@@ -109,29 +126,33 @@
     </tr>
     <tr>
       <td>Rewarded video (you tap to watch, you get a reward)</td>
-      <td>Yes — this is the only format</td>
+      <td>Yes — always opt-in</td>
     </tr>
     <tr>
-      <td>Interstitial (full-screen ad between matches)</td>
-      <td>No — disabled game-wide</td>
+      <td>Interstitial (full-screen, after round 1)</td>
+      <td>Yes — roughly every third single-player game</td>
     </tr>
     <tr>
       <td>Banner ads</td>
       <td>No</td>
     </tr>
     <tr>
-      <td>Ads during a match</td>
+      <td>Ads in the middle of a round</td>
       <td>No</td>
     </tr>
     <tr>
       <td>Ads before you can open the app</td>
       <td>No</td>
     </tr>
+    <tr>
+      <td>Ads in the tutorial or practice round</td>
+      <td>No</td>
+    </tr>
   </table>
-  <p>We removed post-match interstitials on purpose. An ad that ambushes you the moment you finish a game is the single most common complaint about free word games, and we would rather not earn that review.</p>
+  <p>The interstitial sits after round 1 rather than at the end of a match on purpose: an ad that fires the instant you finish a game is the most disliked pattern in free word games, and we would rather not earn that review.</p>
 
-  <h2>3. Who serves our ads</h2>
-  <p>We use <strong>LevelPlay (powered by ironSource, a Unity Technologies company)</strong> to deliver rewarded video. LevelPlay works with a number of ad networks that bid to fill each ad slot.</p>
+  <h2>4. Who serves our ads</h2>
+  <p>We use <strong>LevelPlay (powered by ironSource, a Unity Technologies company)</strong> to deliver our ads. LevelPlay works with a number of ad networks that bid to fill each ad slot.</p>
   <p>Depending on your consent choices, LevelPlay and its partner networks may process:</p>
   <ul>
     <li>Your device advertising identifier (IDFA on iOS, GAID on Android) — <strong>only with your consent</strong></li>
@@ -140,7 +161,7 @@
   </ul>
   <p>See the <a href="https://www.is.com/privacy-policy/" target="_blank" rel="noopener">ironSource Privacy Policy</a> for how LevelPlay handles this data.</p>
 
-  <h2>4. Personalized vs. non-personalized ads</h2>
+  <h2>5. Personalized vs. non-personalized ads</h2>
   <p><strong>Personalized ads</strong> use your advertising identifier to show ads that are more relevant to you. <strong>Non-personalized ads</strong> are based only on general context, such as the app you are using and your country.</p>
   <p>You are never required to accept personalized ads. If you decline, you will still see rewarded ads and still earn the same rewards — the ads are simply less targeted.</p>
 
@@ -153,19 +174,19 @@
   <p>On iOS, Apple's App Tracking Transparency (ATT) prompt appears before any advertising identifier is accessed. If you decline it, only non-personalized ads are shown. You can revisit this in <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong>.</p>
   <p>On Android, you can reset or delete your advertising ID in <strong>Android Settings &rarr; Privacy &rarr; Ads</strong>.</p>
 
-  <h2>5. Players in the EEA, UK, and Switzerland</h2>
+  <h2>6. Players in the EEA, UK, and Switzerland</h2>
   <p>If you are in the European Economic Area, the United Kingdom, or Switzerland, we present a consent form before any personalized advertising takes place, in line with the GDPR and the IAB Transparency and Consent Framework. You may accept or decline, and you may change your answer later from <strong>Settings &rarr; Ads Policy</strong>.</p>
 
-  <h2>6. Players in California and other US states</h2>
+  <h2>7. Players in California and other US states</h2>
   <p>We do not sell personal information for money. Under the CCPA/CPRA, sharing advertising identifiers with ad networks for personalized advertising may still be treated as a "sale" or "share". You can opt out by declining personalized ads in <strong>Settings &rarr; Ads Policy</strong>, which stops that sharing.</p>
 
-  <h2>7. Children</h2>
+  <h2>8. Children</h2>
   <p>Letter Legends is not directed at children under 13 (or the equivalent minimum age in your country). We do not knowingly collect personal information from children. Where a user is identified as a child, only non-personalized ads are served.</p>
 
-  <h2>8. Removing ads entirely</h2>
-  <p>Because ads in Letter Legends are opt-in, you can simply never tap one. If you would like to support the game directly, ad-removal and other purchases are available in the in-game Shop. Removing ads does not change the rest of your gameplay.</p>
+  <h2>9. Removing ads entirely</h2>
+  <p>Rewarded ads you can simply never tap. Interstitials you cannot opt out of individually — for those, ad removal is available as a purchase in the in-game Shop, and holding it stops interstitials appearing. Removing ads does not change the rest of your gameplay, and rewarded videos remain available if you still want the bonuses they offer.</p>
 
-  <h2>9. Reporting a bad ad</h2>
+  <h2>10. Reporting a bad ad</h2>
   <p>If you see an ad that is inappropriate, misleading, broken, or that failed to pay out its reward, please tell us — we pass reports upstream to the ad network and can credit a missing reward.</p>
   <ul>
     <li>Email: <a href="mailto:support@glitchyard.studio">support@glitchyard.studio</a></li>
@@ -173,17 +194,17 @@
     <li>A screenshot and the approximate time help us identify the advertiser.</li>
   </ul>
 
-  <h2>10. Changes to this policy</h2>
+  <h2>11. Changes to this policy</h2>
   <p>If we ever change our ad formats — for example, if we were to introduce a format not listed in Section 2 — we will update this page, update the "Last Updated" date, and notify you in-app before the change takes effect.</p>
 
-  <h2>11. Related policies</h2>
+  <h2>12. Related policies</h2>
   <ul>
     <li><a href="/privacy">Privacy Policy</a></li>
     <li><a href="/terms">Terms of Service</a></li>
     <li><a href="/delete-account">Account &amp; Data Deletion</a></li>
   </ul>
 
-  <h2>12. Contact</h2>
+  <h2>13. Contact</h2>
   <p>Questions about advertising in Letter Legends:</p>
   <ul>
     <li>Email: <a href="mailto:privacy@glitchyard.studio">privacy@glitchyard.studio</a></li>
